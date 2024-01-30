@@ -1,0 +1,42 @@
+.why__list {
+  @extend %list-nostyle;
+
+  @include mq(m) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 40px;
+    grid-column-gap: 60px;
+  }
+
+  @include mq(l) {
+    grid-row-gap: 60px;
+    // grid-column-gap: 300px;
+  }
+}
+
+.why__item {
+  max-width: 40rem;
+}
+
+.why__title {
+  position: relative;
+}
+
+.why__title sup {
+  @include fluid(font-size, (xxs: 12px, xl: 18px));
+  position: absolute;
+  top: 0;
+  left: -4px;
+  letter-spacing: 0;
+  transform: translateX(-100%);
+}
+
+.why__links {
+  @extend %list-nostyle;
+
+  @include mq($until: m) {
+    li {
+      @include fluid(margin-top, (xxs: 12px, m: 18px));
+    }
+  }
+}

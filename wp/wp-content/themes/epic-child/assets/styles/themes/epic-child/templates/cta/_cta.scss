@@ -1,0 +1,26 @@
+.cta {
+  @include fluid(margin-bottom, (xxs: -27.5px, m: -32.5px, xl: -41px));
+  text-align: center;
+}
+
+.cta__title {
+  display: inline-block;
+  width: 100%;
+  max-width: 110rem;
+
+  img {
+    width: 100%;
+  }
+
+  &.gl {
+    visibility: hidden;
+    // .cta__title__image {
+    //   display: none;
+    // }
+  }
+}
+
+.cta__text {
+  display: inline-block;
+  max-width: 70rem;
+}

@@ -1,0 +1,54 @@
+$paddingv: (xxs: 13px, nav: 15px, xl: 19px);
+$paddingh: (xxs: 10px, nav: 20px, xl: 25px);
+
+.button {
+  @include gilroy;
+  @include fluid('font-size', (xxs: 15px, nav: 16px, xl: 18px));
+  @include fluid('padding-top', $paddingv);
+  @include fluid('padding-right', $paddingh);
+  @include fluid('padding-bottom', $paddingv);
+  @include fluid('padding-left', $paddingh);
+  display: inline-flex;
+  align-items: center;
+  background: $white;
+  color: $c-black-russian!important;
+  font-weight: 800;
+}
+
+.button:hover {
+  svg {
+    transform: translateX(1px);
+  }
+  
+  span {
+    pointer-events: none;
+    animation: 2s glitch-anim-text infinite;
+  }
+}
+
+.button.gl {
+  background: transparent;
+}
+
+.button svg {
+  @include fluid('width', (xxs: 8px, nav: 10px, xl: 12px));
+  @include fluid('height', (xxs: 8px, nav: 10px, xl: 12px));
+  @include fluid('margin-left', (xxs: 5px, nav: 10px, xl: 15px));
+  transition: transform .2s;
+  fill: $c-black-russian;
+}
+
+.button--big {
+  @include fluid('font-size', (xxs: 24px, nav: 28px, xl: 36px));
+
+  svg {
+    @include fluid('width', (xxs: 18px, nav: 22px, xl: 28px));
+    @include fluid('height', (xxs: 18px, nav: 22px, xl: 28px));
+    @include fluid('margin-left', (xxs: 10px, nav: 15px, xl: 20px));
+  }
+}
+
+
+html.static .button:hover {
+  opacity: .8;
+}

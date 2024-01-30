@@ -1,0 +1,88 @@
+.thank {
+  @include get-all-space;
+  position: fixed;
+  display: none;
+  z-index: 200;
+}
+
+.thank__layer {
+  @include get-all-space;
+  background: rgba(#02001B, .85);
+  cursor: pointer;
+}
+
+.thank__popup {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+
+  @include mq(s) {
+    @include center-xy;
+    width: 90%;
+    max-width: 1024px;
+  }
+}
+
+.thank__panel {
+  width: 100%;
+  display: flex;
+  background: #000798;
+}
+
+.thank__image {
+  flex-basis: 35%;
+  position: relative;
+  display: none;
+  overflow: hidden;
+
+  @include mq(m) {
+    display: block;
+  }
+
+  @include mq(l) {
+    flex-basis: 50%;
+  }
+
+  img {
+    @include image-fit;
+  }
+}
+
+.thank__content {
+  padding: 30px;
+  flex: 1;
+
+  @include mq(s) {
+    padding: 60px;
+  }
+
+  .icon-wecargo-logo-tiny {
+    fill: $white;
+    width: 57px;
+  }
+}
+
+.thank .popup__close {
+  right: 20px;
+}
+
+.thank__follow {
+  display: flex;
+  align-items: center;
+
+  svg {
+    fill: $white;
+    width: 15px;
+    height: 15px;
+  }
+
+  p {
+    @extend .more;
+    margin-right: 10px;
+  }
+
+  a {
+    font-size: 0;
+  }
+}

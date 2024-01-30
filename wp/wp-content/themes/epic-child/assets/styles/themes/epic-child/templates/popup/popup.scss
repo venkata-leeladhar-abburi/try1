@@ -1,0 +1,161 @@
+.popup {
+  @include fluid(margin-top, (xxs: 80px, m: 100px, xl: 120px));
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+}
+
+.popup.gl {
+  .popup__panel,
+  .popup__layer {
+    background: transparent;
+  }
+}
+
+.popup__layer {
+  @include get-all-space;
+  position: fixed;
+  background: rgba(0, 0, 0, .8);
+  cursor: pointer;
+}
+
+.popup__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $c-navy-blue;
+}
+
+.popup__close {
+  @extend %button-nostyle;
+  @include fluid(width, (xxs: 40px, xl: 110px));
+  @include fluid(height, (xxs: 40px, xl: 110px));
+  @include fluid(right, (xxs: 50px, xl: 120px));
+  position: absolute;
+  z-index: 55;
+  top: 0;
+  font-size: 0;
+  transform: translateY(-50%) translateZ(999999px);
+
+  svg {
+    width: 100%;
+    fill: $white;
+  }
+
+  div {
+    @include center-xy;
+    left: 0;
+    width: 100%;
+    transition: transform 1s $ease-wecargo;
+  }
+
+  span {
+    @include fluid(height, (xxs: 4px, xl: 8px));
+    display: block;
+    width: 100%;
+    background: $white;
+  }
+
+  .first {
+    transform: rotate(45deg);
+  }
+
+  .second {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    .first {
+      transform: rotate(50deg);
+    }
+
+    .second {
+      transform: rotate(-50deg);
+    }
+  }
+}
+
+.popup__left {
+  margin-bottom: 4rem;
+
+  @include mq(m) {
+    margin-bottom: 0;
+  }
+
+  .person {
+    max-width: 36rem;
+    margin-bottom: 0;
+  }
+
+  .person__image {
+    overflow: hidden;
+  }
+
+  .person__link {
+    display: none;
+  }
+}
+
+.popup__social {
+  @extend %list-nostyle;
+  display: flex;
+  align-items: center;
+
+  li + li {
+    margin-left: 1.5rem;
+
+    @include mq(m) {
+      margin-left: 2.5rem;
+    }
+  }
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $white;
+
+    @include mq(m) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+.popup__date {
+  @extend .label;
+  display: inline-flex;
+  border: .1rem solid rgba(255, 255, 255, 0.2);
+  color: $white;
+
+  span {
+    display: inline-block;
+    padding: .9rem 1.5rem;
+  }
+
+  span + span {
+    border-left: .1rem solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+.popup__content {
+  max-width: 110rem;
+}
+
+@include mq(m) {
+  .popup__content {
+    display: flex;
+  }
+
+  .popup__left,
+  .popup__right {
+    flex: 1;
+  }
+
+  .popup__left {
+    padding-right: 5rem;
+  }
+}

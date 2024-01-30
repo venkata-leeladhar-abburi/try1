@@ -1,0 +1,74 @@
+.list__ul {
+  @extend %list-nostyle
+}
+
+.list__li {
+  position: relative;
+  border-bottom: .1rem solid rgba($c-cyan-aqua, .3);
+
+  &:hover .list__image {
+    opacity: 1;
+  }
+}
+
+.list__event {
+  color: $c-cyan-aqua;
+
+  dl {
+    align-items: center;
+  }
+}
+
+.list__link {
+  @include get-all-space;
+  z-index: 10;
+  display: block;
+}
+
+.list__conference {
+  display: flex;
+  margin: 0;
+
+  dt,
+  dd {
+    margin: 0;
+  }
+}
+
+.list__conference__hour {
+  @include gilroy;
+  @include fluid(font-size, (xxs: 14px, xl: 18px));
+  @include fluid(padding-right, (xxs: 20px, xl: 140px));
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  span {
+    position: sticky;
+    top: 1rem;
+    display: block;
+  }
+}
+
+.list__conference__title {
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+
+.list__image {
+  @include center-y;
+  @include fluid(right, (xxs: 0, xl: 170px));
+  @include fluid(width, (xxs: 95px, xl: 190px));
+  transition: opacity .4s $ease-wecargo;
+  opacity: 0;
+
+  &.gl {
+    visibility: hidden;
+  }
+}
+
+
+.mentor-content {
+  @include mq(l) {
+    padding-left: 30%;
+  }
+}

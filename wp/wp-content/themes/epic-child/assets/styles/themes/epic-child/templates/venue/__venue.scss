@@ -1,0 +1,54 @@
+.venue__transports {
+  @include mq(m) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 40px;
+    grid-column-gap: 60px;
+  }
+}
+
+// .venue__hotel {
+//   max-width: 440px;
+// }
+
+// .venue__hotel__wrapper {
+//   position: relative;
+// }
+
+// .venue__hotel__image {
+//   width: 100%;
+//   pointer-events: none;
+
+//   img {
+//     width: 100%;
+//   }
+
+//   @include mq(m) {
+//     position: absolute;
+//     z-index: -1;
+//     top: 50%;
+//     right: 100px;
+//     width: 446px;
+//     max-width: 30vw;
+//     transform: translate(0%, -50%);
+//     opacity: 1;
+//     transition: opacity 1s $ease-wecargo, transform 6s $ease-wecargo;
+
+//     // .venue__hotel:hover & {
+//     //   opacity: 1;
+//     //   transform: translate(90%, -50%);
+//     // }
+//   }
+
+//   @include mq(l) {
+//     right: 250px;
+//   }
+// }
+
+.venue__transport {
+  max-width: 460px;
+
+  ul {
+    @extend %list-nostyle;
+  }
+}

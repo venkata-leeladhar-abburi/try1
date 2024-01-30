@@ -1,0 +1,81 @@
+.lottie {
+  @extend .wrapper;
+  position: relative;
+  pointer-events: none;
+  display: none;
+
+  @include mq(l) {
+    display: block;
+  }
+
+  .lottie__animation {
+    position: absolute;
+    // transform: translate(-50%, -50%);
+    width: 340px;
+
+    left: 0px;
+    top: -200px;
+  }
+
+
+  &, * {
+    will-change: transform;
+  }
+}
+
+.lottie-right .lottie__animation {
+  right: 0;
+  left: auto;
+}
+
+.lottie-left .lottie__animation {
+  left: 0;
+}
+
+.lottie-left1 .lottie__animation {
+  left: -150px;
+}
+
+.lottie-right1 .lottie__animation {
+  right: -150px;
+  left: auto;
+}
+
+// .lottie__animation {
+//   @include center-xy;
+//   position: absolute;
+//   width: 100%;
+// }
+
+// .lottie-pos2 {
+//   width: 400px;
+  
+//   .lottie__animation {
+//     margin-left: -900px;
+//   }
+// }
+
+// .lottie-pos3 {
+//   width: 400px;
+
+//   .lottie__animation {
+//     margin-left: 20vw;
+//   }
+// }
+
+// .lottie-pos4 {
+//   width: 320px;
+
+//   .lottie__animation {
+//     margin-left: -40vw;
+//   }
+// }
+
+// .lottie-pos5 {
+//   width: 320px;
+
+//   .lottie__animation {
+//     margin-left: 20vw;
+//     margin-top: -300px;
+//   }
+// }

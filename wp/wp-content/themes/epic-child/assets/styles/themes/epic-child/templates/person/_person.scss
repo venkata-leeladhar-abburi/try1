@@ -1,0 +1,74 @@
+.person {
+  width: 100%;
+}
+
+.person__image {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 135%;
+
+  img {
+    @include image-fit;
+  }
+
+  &::after {
+    @include get-all-space;
+    content: '';
+    background: linear-gradient(to top, rgba($black, 1.0) 0%, rgba($black, 0.0) 50%);
+  }
+}
+
+.person__image.gl {
+  // opacity: 0;
+  visibility: hidden;
+}
+
+.person__role {
+  line-height: 1.15;
+}
+
+.person__container {
+  position: relative;
+}
+
+.person__link {
+  @include get-all-space;
+  z-index: 5;
+  display: block;
+}
+
+// .person__text {
+//   pointer-events: none;
+// }
+
+@include mq(l) {
+  .person__inner {
+    @include get-all-space;
+  }
+}
+
+@include mq(s) {
+  .person {
+    position: relative;
+  }
+
+  .person__text {
+    @include fluid(padding-right, (s: 30px, l: 50px));
+    @include fluid(padding-bottom, (s: 30px, l: 40px));
+    @include fluid(padding-left, (s: 30px, l: 50px));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+html.static .person {
+  transition: filter .3s;
+}
+
+html.static .person:hover {
+  // opacity: .8;
+  filter: brightness(120%);
+}

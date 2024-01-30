@@ -1,0 +1,172 @@
+.nav {
+  @include fluid('padding-top', (xxs: 21px, nav: 24px));
+  position: absolute;
+  // position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+[data-barba='container'] {
+  @include fluid('padding-top', (xxs: 67px, nav: 75px, xl: 92px));
+}
+
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  @include fluid('width', (xxs: 74px, nav: 82px, xl: 110px));
+  display: block;
+  font-size: 0;
+
+  svg {
+    fill: $white;
+  }
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+
+  > * + *,
+  .nav__list__first > * + * {
+    margin-left: 2rem;
+    @include fluid('margin-left', (xxs: 20px, l: 50px));
+  }
+}
+
+.nav__list__first {
+  @extend %list-nostyle;
+  display: none;
+  align-items: center;
+
+  .nav__list__firsta {
+    @include gilroy;
+    font-size: 1.6rem;
+    font-weight: 800;
+    transition: color .6s $ease-wecargo;
+
+    &.active,
+    &:hover {
+      color: $c-cyan-aqua;
+    }
+  }
+
+  > li {
+    position: relative;
+
+    &.active,
+    &:hover {
+      .nav__list__firsta {
+        color: $c-cyan-aqua;
+      }
+    }
+  }
+
+  @include mq(l) {
+    display: flex;
+  }
+}
+
+.nav__sublist {
+  @include expand(3.2rem);
+  @include center-x;
+  top: 4.7rem;
+  display: none;
+  width: 80rem;
+
+  .nav__sublist__container {
+    width: 100%;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    background: $c-black-russian;
+  }
+
+  .events {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .events__item {
+    // flex: 1;
+    margin: 0!important;
+  }
+}
+
+.nav__toggler {
+  @extend %button-nostyle;
+  @include expand(1rem);
+  z-index: 10;
+  width: 2rem;
+
+  div {
+    @include center-xy;
+    width: 100%;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: .3rem;
+    background: $white;
+    transition: transform .4s $ease-wecargo;
+    will-change: transform;
+  }
+
+  .first {
+    transform: translateY(-4px);
+  }
+
+  .second {
+    transform: translateY(4px);
+  }
+
+  &:hover {
+    .first {
+      transform: translateY(-6px) scaleX(1.1);
+    }
+
+    .second {
+      transform: translateY(6px) scaleX(1.1);
+    }
+  }
+
+  .menu-open & {
+    .first {
+      transform: rotate(45deg);
+    }
+
+    .second {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      .first {
+        transform: rotate(40deg);
+      }
+
+      .second {
+        transform: rotate(-40deg);
+      }
+    }
+
+  }
+
+  // span:first-child {
+  //   margin-bottom: .6rem;
+  // }
+}
+
+.nav__button {
+  z-index: 10;
+  transition: background .3s $ease-wecargo;
+  will-change: background;
+
+  .menu-open & {
+    background: $white;
+  }
+}

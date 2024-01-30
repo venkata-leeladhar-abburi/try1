@@ -1,0 +1,47 @@
+.intro .baseline {
+  max-width: 52rem;
+}
+
+.intro__text {
+  max-width: 62rem;
+}
+
+.intro__date p {
+  display: none;
+}
+
+.intro__wrapper {
+  position: relative;
+}
+
+.intro__subtitle {
+  span {
+    white-space: nowrap;
+  }
+}
+
+.intro__date {
+  position: absolute;
+  z-index: -1;
+  top: 10rem;
+  right: 0;
+  width: 70vw;
+
+  &.gl {
+    visibility: hidden;
+  }
+
+  @include mq(s) {
+    right: 10vw;
+    max-width: 39rem;
+  }
+
+  @include mq(l) {
+    top: 0rem;
+    max-width: 64rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}

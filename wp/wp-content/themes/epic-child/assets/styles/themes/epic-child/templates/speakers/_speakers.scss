@@ -1,0 +1,96 @@
+.speakers {
+
+}
+
+.speakers__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .person {
+    flex-basis: calc(50% - 20px);
+  }
+
+  @include mq($until: l) {
+    .person:nth-child(2n) {
+      .person__container {
+        transform: translateY(50px);
+
+        @include mq(s) {
+          transform: translateY(100px);
+        }
+      }
+    }
+  }
+
+  @include mq(s) {
+    .person {
+      flex-basis: calc(50% - 25px);
+    }  
+  }
+
+  @include mq(l) {
+    .person {
+      flex-basis: calc(33.333% - 35px);
+    }
+
+    .person:nth-child(3n+2) {
+      .person__container {
+        transform: translateY(100px);
+      }
+    }
+
+    .person:nth-child(3n+3) {
+      .person__container {
+        transform: translateY(30px);
+      }
+    }
+  }
+}
+
+// .speakers__list {
+//   columns: 2;
+//   column-gap: 40px;
+
+//   .person {
+//     break-inside: avoid-column;
+//   }
+
+//   .person:nth-child(4),
+//   .person:nth-child(5),
+//   .person:nth-child(6) {
+//     .person__container {
+//       transform: translateY(50px);
+
+//       @include mq(s) {
+//         transform: translateY(100px);
+//       }
+
+//       @include mq(l) {
+//         transform: translateY(0);
+//       }
+//     }
+//   }
+
+//   @include mq(s) {
+//     column-gap: 50px;
+//   }
+
+//   @include mq(l) {
+//     columns: 3;
+
+//     .person:nth-child(3),
+//     .person:nth-child(4) {
+//       .person__container {
+//         transform: translateY(100px);
+//       }
+//     }
+
+//     .person:nth-child(5),
+//     .person:nth-child(6) {
+//       .person__container {
+//         transform: translateY(30px);
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,45 @@
+$sizes: (
+  xxl: (xxs: 80px, m: 120px, xl: 160px),
+  xl: (xxs: 60px, m: 80px, xl: 120px),
+  l: (xxs: 40px, m: 60px, xl: 80px),
+  m: (xxs: 30px, m: 40px, xl: 60px),
+  s: (xxs: 20px, m: 30px, xl: 40px),
+  xs: (xxs: 15px, m: 20px, xl: 30px),
+  xxs: (xxs: 10px, m: 10px, xl: 10px),
+);
+
+
+@each $name, $value in $sizes {
+  .m-#{$name} {
+    @include fluid(margin-top, $value);
+    @include fluid(margin-bottom, $value);
+  }
+
+  .mt-#{$name} {
+    @include fluid(margin-top, $value);
+  }
+
+  .mb-#{$name} {
+    @include fluid(margin-bottom, $value);
+  }
+
+  .p-#{$name} {
+    @include fluid(padding-top, $value);
+    @include fluid(padding-bottom, $value);
+  }
+
+  .pt-#{$name} {
+    @include fluid(padding-top, $value);
+  }
+
+  .pb-#{$name} {
+    @include fluid(padding-bottom, $value);
+  }
+}
+
+
+@include mq(xl) {
+  .mb-onlyxl {
+    margin-bottom: 32rem;
+  }
+}

@@ -1,0 +1,49 @@
+.sponsor {
+
+}
+
+.sponsor__list {
+  @extend %list-nostyle;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  border-right: .1rem solid rgba(255, 255, 255, .15);
+  border-bottom: .1rem solid rgba(255, 255, 255, .15);
+  text-align: center;
+  flex-wrap: wrap;
+
+  @include mq(l) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    @include fluid(padding-top, (xxs: 10px, m: 30px));
+    @include fluid(padding-bottom, (xxs: 10px, m: 30px));
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-top: .1rem solid rgba(255, 255, 255, .15);
+    border-left: .1rem solid rgba(255, 255, 255, .15);
+    flex-basis: 20%;
+
+    &:hover img {
+      // opacity: 0.7;
+      filter: invert(38%) sepia(13%) saturate(3207%) hue-rotate(169deg) brightness(155%) contrast(80%);
+    }
+  }
+  
+  li a {
+    @include get-all-space;
+    z-index: 5;
+  }
+  
+  img {
+    @include fluid(max-width, (xxs: 100px, m: 200px));
+    // @include fluid(max-height, (xxs: 35px, m: 100px));
+    width: 100%;
+    transition: filter 2s $ease-wecargo;
+  }
+}

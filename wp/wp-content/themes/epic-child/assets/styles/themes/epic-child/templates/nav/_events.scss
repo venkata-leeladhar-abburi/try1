@@ -1,0 +1,40 @@
+.events__item li + li {
+  margin-top: 1rem;
+}
+
+.events__item a {
+
+}
+
+.events__item ul {
+  @extend %list-nostyle;
+}
+
+.event-link {
+  @include gilroy;
+  @include fluid(font-size, (xxs: 22px, l: 24px));
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+
+
+  svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-left: 1rem;
+    fill: $c-cyan-aqua;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: transform 1s $ease-wecargo, opacity 1s $ease-wecargo;
+    will-change: transform;
+  }
+
+  &:hover {
+    color: $c-cyan-aqua;
+
+    svg {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+}

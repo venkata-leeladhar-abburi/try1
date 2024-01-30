@@ -1,0 +1,9 @@
+.canvas {
+  @include get-all-space;
+  position: fixed;
+  z-index: -1;
+
+  &, * {
+    will-change: transform;
+  }
+}

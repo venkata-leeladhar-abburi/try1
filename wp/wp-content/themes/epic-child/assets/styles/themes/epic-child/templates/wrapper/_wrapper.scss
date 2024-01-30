@@ -1,0 +1,19 @@
+$padding: (xxs: 25px, nav: 55px, xl: 100px);
+
+.wrapper {
+  @include fluid('padding-left', $padding);
+  @include fluid('padding-right', $padding);
+  max-width: 150rem;
+  margin: 0 auto;
+
+
+  // padding: 0 2.5rem;
+
+  // @include mq(nav) {
+  //   padding: 0 5.5rem;
+  // }
+
+  // @include mq(xl) {
+  //   padding: 0 10rem;
+  // }
+}

@@ -1,0 +1,48 @@
+.content {
+  
+}
+
+.content__container {
+  position: relative;
+}
+
+.content--small .content__text .lead {
+  line-height: 1.2;
+}
+
+.content__text {
+  max-width: 440px;
+
+  span {
+    @include fluid('font-size', (xxs: 15px, nav: 18px, xl: 20px));
+  }
+}
+
+.content__image img {
+  width: 100%;
+
+  &.gl {
+    visibility: hidden;
+  }
+}
+
+@include mq(m) {
+  .content__image {
+    @include center-y;
+    width: 50%;
+    left: calc(50% + 30px);
+    max-width: 460px;
+    z-index: -1;
+  }
+
+  .content--reverse {
+    .content__image {
+      left: 0;
+    }
+
+    .content__container {
+      padding-left: calc(50% + 30px);
+    }
+  }
+}
+

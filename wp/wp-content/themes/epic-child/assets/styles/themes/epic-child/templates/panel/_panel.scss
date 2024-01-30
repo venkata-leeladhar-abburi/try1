@@ -1,0 +1,53 @@
+.panel {
+  // overflow: hidden;
+}
+
+.panel__list {
+  @extend %list-nostyle;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 40px;
+  grid-column-gap: 30px;
+
+  @include mq(l) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 90px;
+    grid-column-gap: 40px;
+  }
+}
+
+.panel__subline {
+  @include fluid(font-size, (xxs: 12px, xl: 18px));
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+
+.panel__item {
+  position: relative;
+}
+
+.panel__image {
+  position: absolute;
+  width: 20rem;
+  top: -100px;
+  z-index: -1;
+  left: 90px;
+  visibility: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
+html.static {
+  .panel__image {
+    visibility: visible;
+    transition: opacity .3s;
+    
+    opacity: 0;
+  }
+
+  .panel__item:hover .panel__image {
+    opacity: 1;
+  }
+}

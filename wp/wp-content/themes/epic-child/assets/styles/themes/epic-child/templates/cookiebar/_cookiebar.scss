@@ -1,0 +1,80 @@
+.cookiebar {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  background: rgba($c-black-russian, 0.95);
+  padding: 3rem;
+
+  @include mq(s) {
+    left: auto;
+    width: 470px;
+    // padding: 3rem;
+  }
+
+
+  @include mq($until: xs) {
+    br {
+      display: none;
+    }
+  }
+
+  p {
+    line-height: 1.2;
+  }
+
+  p a {
+    text-decoration: underline;
+  }
+}
+
+.cookiebar__close {
+  @extend %button-nostyle;
+  @include expand(20px);
+  // @include fluid(width, (xxs: 18px, xl: 110px));
+  // @include fluid(height, (xxs: 18px, xl: 110px));
+  width: 18px;
+  height: 18px;
+  right: 8px;
+  top: 8px;
+  position: absolute;
+  z-index: 55;
+  font-size: 0;
+
+  @include mq(m) {
+    top: 12px;
+    right: 12px;
+  }
+
+  div {
+    @include center-xy;
+    left: 0;
+    width: 100%;
+    transition: transform 1s $ease-wecargo;
+  }
+
+  span {
+    height: 2px;
+    display: block;
+    width: 100%;
+    background: $white;
+  }
+
+  .first {
+    transform: rotate(45deg);
+  }
+
+  .second {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    .first {
+      transform: rotate(50deg);
+    }
+
+    .second {
+      transform: rotate(-50deg);
+    }
+  }
+}

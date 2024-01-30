@@ -1,0 +1,27 @@
+.about__orgs {
+  @include mq(m) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 60px;
+    grid-column-gap: 60px;
+  }
+}
+
+.about__org {
+  max-width: 460px;
+}
+
+.abour__org__logo {
+  display: flex;
+  align-items: flex-end;
+  width: 120px;
+  height: 60px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.about__partners__text {
+  max-width: 510px;
+}
